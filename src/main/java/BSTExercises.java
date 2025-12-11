@@ -9,6 +9,14 @@ public class BSTExercises {
      */
     public static BST<Integer> fromArray(int[] values) {
         // TODO: implement Task 11 (optional)
-        return null;
+        if(values == null){
+            throw new IllegalArgumentException();
+        }
+        BST<Integer> result = new BST<>(); //New BST<Integer>
+        for(int element : values){
+            result.insert(element); //inserts all the values in array into the BST
+        }
+        return result; //resulting tree
     }
+
 }
