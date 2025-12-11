@@ -277,4 +277,99 @@ public class BST<E> implements Tree<E> {
         root = null;
         size = 0;
     }
+
+    //----------Part B----------
+    //Task 6
+    public int height(){
+        return height(root);
+
+    }
+    //Helper method for Task 6
+    private int height(TreeNode<E> node){
+        if(node == null){ //If there is no node, tree is empty
+            return -1; //the height of an empty tree is -1
+        }
+        int left = height(node.left); //goes to the left subtree
+        int right = height(node.right); //goes to the right subtree
+
+        return Math.max(left, right) + 1; //computes the height using the height we got from the left and right subtree.
+        //This allows us to work "backwards'". We Go from the farthest node to the root to get height
+    }
+    //----------Task 7----------
+    public int countLeaves(){
+        return countLeaves(root);
+    }
+    //Helper method for Task 7
+    private int countLeaves(TreeNode<E> node){
+        //Empty tree/subtree
+        if (node == null){
+            return 0;
+        }
+        //Checks if there are any leaf nodes
+        if(node.left == null && node.right == null){
+            return 1; //Adds 1 if there is a leaf node(no left or right child)
+        }
+        return countLeaves(node.left) + countLeaves(node.right); //Adds total number of leafs found after searching the tree
+    }
+    //----------Task 8----------
+
+    public E min(){
+        if(root == null){
+            return null;
+        }
+        TreeNode<E> curr = root;
+        while(curr.left != null){
+            curr = curr.left; //Assigns curr to the smallest element in the tree (repeated until there are no more left children)
+        }
+        return curr.element; //Returns the left-most node after searching through all left-nodes
+    }
+    public E max(){
+        if(root == null){
+            return null;
+        }
+        TreeNode<E> curr = root;
+        while(curr.right != null){
+            curr = curr.right; //Assigns curr to the biggest element in the tree (repeated until there are no more right children)
+        }
+        return curr.element; //Returns the right-most node after searching through all right-nodes
+    }
+    //----------Task 9---------
+    public java.util.List<E> toSortedList(){
+        java.util.List<E> list = new java.util.ArrayList<>();
+        toSortedList(root, list);
+        return list;
+    }
+
+    //Helper method for Task 9
+    private void toSortedList(TreeNode<E> node, java.util.List<E> result){
+        if(node == null){
+            return;
+        }
+        toSortedList(node.left, result); //Traversing the left subtree (The left-most element is found first, and then it gets added to the arraylist)
+        result.add(node.element); //Adding current node element to the arraylist
+        toSortedList(node.right, result); //Traversing the right subtree
+    }
+    //Task 10
+    public boolean isBalanced(){
+        return heightOrUnbalanced(root) != -2;
+    }
+    //Helper method for Task 10
+    private int heightOrUnbalanced(TreeNode<E> node){
+        if(node == null){
+            return -1;
+        }
+        int left = heightOrUnbalanced(node.left);
+        if(left == -2){
+            return -2;
+        }
+        int right = heightOrUnbalanced(node.right);
+        if(right == -2){
+            return -2;
+        }
+        if(Math.abs(left - right) > 1){
+            return -2;
+        }
+        return Math.max(left, right) + 1;
+    }
+
 }
