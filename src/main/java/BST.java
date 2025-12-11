@@ -278,7 +278,7 @@ public class BST<E> implements Tree<E> {
     }
 
     //----------Part B----------
-    //Task 6
+    //----------Task 6----------
     public int height(){
         return height(root);
 
@@ -348,7 +348,7 @@ public class BST<E> implements Tree<E> {
         result.add(node.element); //Adding current node element to the arraylist
         toSortedList(node.right, result); //Traversing the right subtree
     }
-    //Task 10
+    //----------Task 10----------
     public boolean isBalanced(){
         return heightOrUnbalanced(root) != -2;
     }
