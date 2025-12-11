@@ -358,15 +358,17 @@ public class BST<E> implements Tree<E> {
         if(node == null){
             return -1;
         }
+        //Gets the height of the left subtree
         int left = heightOrUnbalanced(node.left);
-        if(left == -2){
-            return -2;
+        if(left == -2){ //Tree is already unbalanced
+            return -2; //returns the special value which is -2
         }
+        //Gets the height of the right subtree
         int right = heightOrUnbalanced(node.right);
         if(right == -2){
             return -2;
         }
-        if(Math.abs(left - right) > 1){
+        if(Math.abs(left - right) > 1){ //If the height difference between the left and right subtree node is greater than 1, than the tree is unbalanced
             return -2;
         }
         return Math.max(left, right) + 1;
