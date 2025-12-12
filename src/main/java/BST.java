@@ -296,6 +296,7 @@ public class BST<E> implements Tree<E> {
     }
     //----------Task 7----------
     public int countLeaves(){
+
         return countLeaves(root);
     }
     //Helper method for Task 7
@@ -350,6 +351,7 @@ public class BST<E> implements Tree<E> {
     }
     //----------Task 10----------
     public boolean isBalanced(){
+
         return heightOrUnbalanced(root) != -2;
     }
     //Helper method for Task 10

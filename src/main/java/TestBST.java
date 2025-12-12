@@ -35,5 +35,35 @@ public class TestBST {
         System.out.print("\nInorder (sorted): ");
         intTree.inorder();
 
+        //--------------------------------------------
+        System.out.println("\n---------Testing methods with intTree2---------");
+        Integer[] numbers2 = {10, 3, 14, 20, 8, 9, 11};
+        BST<Integer> intTree2 = new BST<>(numbers2);
+        //Test for task 6
+        //Height of tree should be 3
+        System.out.println("Height of tree: " + intTree2.height());
+
+        //Test for task 7
+        //Nmmber of leaves should be 3
+        System.out.println("Number of leaves in tree: " +  intTree2.countLeaves());
+
+        //Test for task 8
+        //Smallest element in tree should be 3
+        System.out.println("Smallest element in tree is: " + intTree2.min());
+
+        //Biggest element in tree should be 20
+        System.out.println("Biggest element in tree is: " + intTree2.max());
+
+        //Test for task 9
+        //Should print [3, 8, 9, 10, 11, 14, 20]
+        System.out.println("Tree sorted: " + intTree2.toSortedList());
+
+        //Test for task 10
+        //This tree should not be balanced
+        System.out.println("Tree is balanced: " + intTree2.isBalanced());
+
+
+
+
     }
 }
