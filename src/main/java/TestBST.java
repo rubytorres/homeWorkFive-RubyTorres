@@ -56,14 +56,16 @@ public class TestBST {
 
         //Test for task 9
         //Should print [3, 8, 9, 10, 11, 14, 20]
-        System.out.println("Tree sorted: " + intTree2.toSortedList());
+        System.out.println("Tree 2 sorted: " + intTree2.toSortedList());
 
         //Test for task 10
         //This tree should not be balanced
         System.out.println("Tree is balanced: " + intTree2.isBalanced());
 
-
-
-
+        //Test for task 11
+        int[] values = {10, 5, 8, 20, 49, 14};
+        BST<Integer> tree3 = BSTExercises.fromArray(values);
+        System.out.print("Tree 3 sorted (in-order): ");
+        tree3.inorder();
     }
 }

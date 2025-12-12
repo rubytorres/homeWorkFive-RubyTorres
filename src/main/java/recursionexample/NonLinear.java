@@ -15,7 +15,7 @@ public class NonLinear {
 	 * Static main method tests the fibonacci method.
 	 */
 	public static void main(String[] args) {
-		// Declar local variable.
+		// Declare local variable.
 		double d;
 		// Check first input argument and assign it.
 		if (args.length > 0) {
@@ -29,7 +29,7 @@ public class NonLinear {
 	    for (double i = 0; i < d; i++) {
 	       System.out.println("Fibonacci index [" + i + "] value [" +
 	    		   NonLinear.fibonacci(i) + "]");
-	    }//endfor
+	    }//end for
 	}//end method main
 }//end class NonLinear
 

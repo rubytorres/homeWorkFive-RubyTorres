@@ -29,6 +29,9 @@ public class Linear {
 
 		// Print the result from the factorial method.     
 	     System.out.println("Factorial [" + Linear.factorial(d) + "] of   [" + d + "]");
+
+        //---------------------------------
+        System.out.println();
 	}//end method main
 }//end class Linear
 

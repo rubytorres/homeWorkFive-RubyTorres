@@ -1,7 +1,4 @@
 package recursionexample;
-
-import java.util.Arrays;
-
 /**
  * Assignment: Recursion mini-tasks.
  *
@@ -60,7 +57,7 @@ public class RecursionExercises {
         if(data == null) {
             throw new IllegalArgumentException();
         }
-        //base cases
+        //base case
         if(data.length == 0){
             return 0;
         }
@@ -88,7 +85,7 @@ public class RecursionExercises {
             return s;
         }
         //Take all characters of s except for the first character and call reverse(...)
-        //The last character becomes the first character and then the other characters are added to the string (last - first character)
+        //The last character becomes the first character and then the other characters are added to the string (goes from last to first character)
         return reverse(s.substring(1)) + s.charAt(0); //Recursive case
     }
 }

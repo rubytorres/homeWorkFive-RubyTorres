@@ -4,9 +4,7 @@ public class BST<E> implements Tree<E> {
     protected java.util.Comparator<E> c;
 
     /** Create a default BST with a natural order comparator */
-    public BST() {
-        this.c = (e1, e2) -> ((Comparable<E>)e1).compareTo(e2);
-    }
+    public BST() { this.c = (e1, e2) -> ((Comparable<E>)e1).compareTo(e2); }
 
     /** Create a BST with a specified comparator */
     public BST(java.util.Comparator<E> c) {
@@ -277,7 +275,7 @@ public class BST<E> implements Tree<E> {
         size = 0;
     }
 
-    //----------Part B----------
+    //-----------------Part B-----------------
     //----------Task 6----------
     public int height(){
         return height(root);
